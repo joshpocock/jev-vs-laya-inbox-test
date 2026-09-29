@@ -1,0 +1,5 @@
+finetune_laya.py adapts the fine-tuning recipe (RLCD loss, sequence building, reward
+functions and calibration step) from the Laya project by Convai Innovations,
+https://github.com/NandhaKishorM/laya , licensed under the Apache License 2.0.
+It imports the `laya` package at runtime; no Laya source files are copied into this repo.
+Laya model weights are downloaded from Hugging Face (convaiinnovations/laya) under their own license.

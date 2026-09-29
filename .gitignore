@@ -1,0 +1,13 @@
+data/
+*.jsonl
+*.mbox
+*.eml
+checkpoints/
+.venv/
+__pycache__/
+.pytest_cache/
+results/
+.env
+sample/.synthetic-data/
+!sample/synthetic_emails.jsonl
+!sample/synthetic_labels.jsonl
