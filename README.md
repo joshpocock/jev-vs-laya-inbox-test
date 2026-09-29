@@ -25,6 +25,20 @@ Every email goes into one of four buckets: **urgent**, **needs a reply**, **FYI*
 - A TypeSafe API key for the Jev round (typesafe.ai).
 - About 15-40 minutes to label emails.
 
+## Keys and access: what you actually need
+
+Nothing here gives this repo, or me, access to anything. Everything runs on your machine.
+
+| Step | What you need | Where your data goes |
+|---|---|---|
+| Get your emails (default) | Nothing. Download your own inbox from Google Takeout (Mail, Inbox only, mbox) | Stays on your computer |
+| Get your emails (optional) | Your own Google Workspace CLI login (`gws auth login`, Gmail read scope) for `export_gmail.py` | Stays on your computer |
+| Laya | Nothing. The model downloads free from Hugging Face | Runs locally |
+| Jev | **Your own TypeSafe API key** (typesafe.ai), in `~/inbox-test-data/.env` as `TYPESAFE_API_KEY=...` | Trimmed emails go to TypeSafe |
+| Pre-filled label suggestions (optional) | Your own Claude Code login | Trimmed emails go to Anthropic, only with `--yes` |
+
+A 300-email Jev run is roughly 150K-200K input tokens: under a cent at $0.042 per million. New TypeSafe accounts may not include free credit.
+
 ## Privacy
 
 - All email data lives in `~/inbox-test-data` (Windows: `%USERPROFILE%\inbox-test-data`), **outside this repo**. The tools refuse to write inside it.
